@@ -5,6 +5,7 @@ import Home from "../Components/Home";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import PokemonPage from "../Components/PokemonPage";
 import Parameters from "../Components/Parameters";
+import Search from "../Components/Search";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -25,11 +26,11 @@ export default function Navigation() {
                 <Tab.Screen name='Home' component={PokemonStack} options={{tabBarIcon : ({}) => {
                         return <Icon name='home' size={30} color='#fa9696' />
                     }}}/>
-                <Tab.Screen name='Search' component={Parameters} options={{tabBarIcon : ({}) => {
+                <Tab.Screen name='Search' component={Search} options={{tabBarIcon : ({}) => {
                         return <Icon name='magnify' size={30} color='#fa9696' />
                     }}}/>
                 <Tab.Screen name='Settings' component={Parameters} options={{tabBarIcon : ({}) => {
-                        return <Icon name='nut' size={30} color='#fa9696' />
+                        return <Icon name='cog' size={30} color='#fa9696' />
                     }}}/>
             </Tab.Navigator>
         </NavigationContainer>
