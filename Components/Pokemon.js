@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import {getStats} from "../Api/getStats";
-import {Text, View, Image, StyleSheet, Pressable} from 'react-native';
-import {getBackgroundColor} from "react-native/Libraries/LogBox/UI/LogBoxStyle";
+import {Text, Image, StyleSheet, Pressable} from 'react-native';
 import {TypeColor} from "./TypeColor";
 
 const color = ['#f16e6e', '#FFAB76', '#BAFFB4', '#a2ffe9', '#FFFDA2']
@@ -25,7 +24,7 @@ export default function Pokemon(props) {
     }
 
     return(
-        <Pressable onPress={()=> {navigation.navigate('Details', {statsPoke: statsPoke, poke: poke, color: getBackgroundColor()})}} style={[styles.container, {backgroundColor : getBackgroundColor()}]}>
+        <Pressable onPress={()=> {navigation.navigate('DetailsScreen', {statsPoke: statsPoke, poke: poke, color: getBackgroundColor()})}} style={[styles.container, {backgroundColor : getBackgroundColor()}]}>
             { statsPoke.sprites ?
                 <Image
                     style={styles.stretch}
