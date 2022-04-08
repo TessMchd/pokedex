@@ -17,7 +17,6 @@ export default function Pokemon(props) {
 
     function getBackgroundColor() {
         if(statsPoke.length !== 0) {
-            console.log(statsPoke.types[0].type.name)
             return TypeColor(statsPoke.types[0].type.name)
         }
         return "white"

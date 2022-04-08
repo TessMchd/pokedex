@@ -12,7 +12,6 @@ export default function PokemonPage(props) {
 
     function getBackgroundColor() {
         let index = Math.floor(Math.random() * 5)
-        console.log(index)
         return backgroundColor[index]
     }
 

@@ -5,10 +5,6 @@ export default function CustomButton(props) {
 
     const {text, color, setTextParent} = props
 
-    const returnColor = (color) => {
-        console.log(color)
-    }
-
     return (
         <Button
             onPress={() => setTextParent(text)}
