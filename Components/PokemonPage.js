@@ -1,4 +1,4 @@
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View, Text, Image, Button} from 'react-native';
 import {TypeColor} from "./TypeColor";
 import ProgressBar from 'react-native-progress/Bar';
 import {ScrollView} from "react-native";
@@ -13,6 +13,10 @@ export default function PokemonPage(props) {
     function getBackgroundColor() {
         let index = Math.floor(Math.random() * 5)
         return backgroundColor[index]
+    }
+
+    function ajouterTeam() {
+        console.log(poke.name)
     }
 
     return (
@@ -66,6 +70,9 @@ export default function PokemonPage(props) {
                     <Text style={{textAlign: 'center', fontSize: 18, marginBottom: 3}}>Weight :</Text>
                     <Text style={{textAlign: 'center'}}>{statsPoke.weight} hg</Text>
                 </View>
+            </View>
+            <View>
+                <Button onPress={ajouterTeam} title="ajouter à ma team" color="#8cd0fa"/>
             </View>
         </ScrollView>
     )
