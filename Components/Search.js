@@ -51,7 +51,6 @@ export default function Search(props) {
             </View>
             {pokemon !== null ? (
                 <View style={styles.card}>
-                    <Text>CoUCOU</Text>
                     <Pokemon navigation={navigation} poke={pokemon}/>
                 </View>
             ) : (

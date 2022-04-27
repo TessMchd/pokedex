@@ -4,11 +4,11 @@ export function TypeColor(typeName) {
     if (typeName !== null) {
         switch (typeName) {
             case 'bug':
-                return "#92c22b"
+                return "#8bcd8d"
             case 'dark':
-                return "#5a5365"
+                return "#53416f"
             case 'dragon':
-                return "#036dc4"
+                return "#4ca7a7"
             case 'electric':
                 return "#f4d339"
             case 'fairy':
@@ -16,21 +16,21 @@ export function TypeColor(typeName) {
             case 'fighting':
                 return "#cf3f6b"
             case 'fire':
-                return "#ff9e54"
+                return "#f1a66b"
             case 'flying':
                 return "#90abdf"
             case 'ghost':
                 return "#5169ae"
             case 'grass':
-                return "#63bd5a"
+                return "#5ba55b"
             case 'ground':
-                return "#da7943"
+                return "#e08656"
             case 'ice':
                 return "#74cfc1"
             case 'normal':
                 return "#929ba3"
             case 'poison':
-                return "#ac6bc9"
+                return "#9f6fb3"
             case 'psychic':
                 return "#fa727a"
             case 'rock':

@@ -1,7 +1,8 @@
-import {StyleSheet, View, Text, Image, Button} from 'react-native';
+import {StyleSheet, View, Text, Image, Button, Alert} from 'react-native';
 import {TypeColor} from "./TypeColor";
 import ProgressBar from 'react-native-progress/Bar';
 import {ScrollView} from "react-native";
+import { AsyncStorage } from 'react-native';
 
 const backgroundColor = ['#fa9696', '#ff9f51', '#95fcc2', '#8cd0fa', '#fabc93']
 
@@ -15,8 +16,35 @@ export default function PokemonPage(props) {
         return backgroundColor[index]
     }
 
-    function ajouterTeam() {
-        console.log(poke.name)
+   async function ajouterTeam() {
+       let team = []
+        try {
+            const value = await AsyncStorage.getItem('team');
+            if (value !== null) {
+                team = JSON.parse(value)
+            }
+            if(team.length < 6) {
+                team.push(poke)
+            } else {
+                Alert.alert(
+                    "Team pleine",
+                    "Votre team comporte déjà 6 pokemon",
+                    [
+                        { text: "OK"}
+                    ]
+                );
+            }
+            try {
+                await AsyncStorage.setItem(
+                    'team',
+                    JSON.stringify(team)
+                );
+            } catch (error) {
+                // Error saving data
+            }
+        } catch (error) {
+            // Error retrieving data
+        }
     }
 
     return (
